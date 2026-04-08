@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 // 🔥 CONECTAR FIREBASE
-const serviceAccount = require("./chave.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_KEY);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
